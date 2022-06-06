@@ -143,7 +143,7 @@
                     
                     
                     
-                    <form method="post" action="../controller/controller_login.php">
+                    <form method="POST" action="../controller/controller_login.php">
                     
                     <div class="i flex-nowrap">
 
