@@ -117,7 +117,9 @@
             
                <div class="col-md py-4">
                    <h2>learn nothing is better</h2>
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque magni cum optio consequatur praesentium facere voluptatibus atque eius exercitationem, et unde nobis error? Aperiam, excepturi a adipisci molestias sunt distinctio?</p>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque magni cum optio
+                      consequatur praesentium facere voluptatibus atque eius exercitationem,
+                       et unde nobis error? Aperiam, excepturi a adipisci molestias sunt distinctio?</p>
                    
                </div>
            </div>
@@ -168,7 +170,7 @@
                 </div>
             </div>
             <div class="col-md">
-                <img src="/ASSETS/IMG/fire.svg" alt="" class="img-fluid">
+                <img src="../ASSETS/IMG/fire.svg" alt="" class="img-fluid">
             </div>
        </div>
                 

@@ -5,7 +5,7 @@ class user
     private $pseudo;
     private $password;
 
-public function login ($pseudo,$password){
+public function login ($pseudo ,$password){
 
     $req = $bdd->prepare('SELECT pseudo , passeword FROM user WHERE pseudo = :pseudo
     AND pass = :pass');
@@ -16,12 +16,13 @@ public function login ($pseudo,$password){
 
     if (!$resultat)
     {
-    return false 
+    return $a= false ;
     }else{
     session_start();
     
     $_SESSION['pseudo'] = $pseudo;
-    return true 
+    
+    return $a=true ;
 
     }
 
