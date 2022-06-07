@@ -10,21 +10,21 @@ public function login ($pseudo ,$password){
     $req = $bdd->prepare('SELECT pseudo , passeword FROM user WHERE pseudo = :pseudo AND pass = :pass');
     $req->execute(array(
     'pseudo' => $pseudo,
-    'passeword' => $password));
+    'pass' => $password));
     $resultat = $req->fetch();
 
     if (!$resultat)
     {
-    return $a= false ;
+     $a= false ;
     }else{
     session_start();
     
     $_SESSION['pseudo'] = $pseudo;
     
-    return $a=true ;
+    $a=true ;
 
     }
-
+return $a;
 
 }
 
