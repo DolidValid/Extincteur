@@ -1,20 +1,23 @@
 
 <?php
-class user
-{
-    private $pseudo;
-    private $password;
 
-public function login ($pseudo ,$password){
 
+
+class user{
+
+   
+    
+
+public function login ($bdd,$pseudo ,$password){
+    $a=true;
     $req = $bdd->prepare('SELECT pseudo , passeword FROM user WHERE pseudo = :pseudo AND pass = :pass');
     $req->execute(array(
     'pseudo' => $pseudo,
     'pass' => $password));
     $resultat = $req->fetch();
+     echo('$resultat');
+    if (!isset($resultat)){
 
-    if (!$resultat)
-    {
      $a= false ;
     }else{
     session_start();
@@ -31,5 +34,5 @@ return $a;
 
 
 
- }
+ }  
  ?>
