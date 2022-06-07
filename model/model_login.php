@@ -7,8 +7,7 @@ class user
 
 public function login ($pseudo ,$password){
 
-    $req = $bdd->prepare('SELECT pseudo , passeword FROM user WHERE pseudo = :pseudo
-    AND pass = :pass');
+    $req = $bdd->prepare('SELECT pseudo , passeword FROM user WHERE pseudo = :pseudo AND pass = :pass');
     $req->execute(array(
     'pseudo' => $pseudo,
     'passeword' => $password));
