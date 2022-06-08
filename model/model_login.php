@@ -9,21 +9,24 @@ class user{
     
 
 public function login ($bdd,$pseudo ,$password){
-    $a=true;
-    $req = $bdd->prepare('SELECT pseudo , passeword FROM user WHERE pseudo = :pseudo AND pass = :pass');
+  
+    $req = $bdd->prepare('SELECT pseudo , passeword FROM user WHERE pseudo = :pseudo AND passeword = :pass');
     $req->execute(array(
     'pseudo' => $pseudo,
     'pass' => $password));
-    $resultat = $req->fetch();
-     echo('$resultat');
-    if (!isset($resultat)){
+    
+    $count=0;
+
+    while ($resultat = $req->fetch())
+{
+$count++;
+}
+
+    if ($count==0){
 
      $a= false ;
     }else{
-    session_start();
-    
-    $_SESSION['pseudo'] = $pseudo;
-    
+        
     $a=true ;
 
     }
@@ -34,5 +37,5 @@ return $a;
 
 
 
- }  
+}
  ?>
