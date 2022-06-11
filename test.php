@@ -10,7 +10,7 @@ $req->execute();
 $resultat = $req->fetch();
 
 echo($resultat['pseudo']);
-echo("\n");
+
 echo('khalil');
 
 ?>
