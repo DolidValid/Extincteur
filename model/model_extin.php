@@ -59,6 +59,24 @@ return $req;
 
 }
 
+public function ExtinPerime ($bdd){
+    $req = $bdd->prepare('SELECT*FROM extin where date_p <= now() ');
+    $req->execute();
+    
+    
+    
+}
+
+public function nbrExtinPerime($bdd)
+{
+    $count = 0;
+    ExtinPerime($bdd);
+
+    while($resultat = $req->fetch())
+    {
+
+    }
+}
 
 
 
