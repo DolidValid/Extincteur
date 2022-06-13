@@ -6,7 +6,7 @@ include_once('../model/connexion_sql.php');
 include_once('../model/model_login.php');
 
 if(isset($_POST['Username'])){
-
+  
     //si tous les champs ont été remplis
    // if(not_empty([ 'Username','password']) ){
         

@@ -63,17 +63,18 @@ public function ExtinPerime ($bdd){
     $req = $bdd->prepare('SELECT*FROM extin where date_p <= now() ');
     $req->execute();
     
-    
+    return $req;
     
 }
 
 public function nbrExtinPerime($bdd)
 {
     $count = 0;
-    ExtinPerime($bdd);
+    $req=$this->ExtinPerime($bdd);
 
     while($resultat = $req->fetch())
     {
+        $count++;
 
     }
 }

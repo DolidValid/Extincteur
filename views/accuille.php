@@ -184,16 +184,23 @@
           </thead>
           <tbody>
             <?php
-           
-           echo '<tr>' ;       
-            echo'  <td>'.$resultat['date_d'].'</td>';
-            echo'<td>'.$resultat['date_p'].'</td>' ;
-            echo' <td>'.$resultat['placeEx'].'</td>' ;
-            echo'<td>'.$resultat['vol'].'</td>';
-            echo'<td>'.$resultat['type'].'</td>';
-            echo'<td>'.$resultat['place'].'</td>';
-            echo ' <td>'.$resultat['id'].'</td>';  
+$resultat11 = $extin1->fetch();
+
+      $cn=1;
+           while($resultat11 = $extin->fetch()){
+
+            echo '<tr>' ;       
+            echo'  <td>'.$resultat11['date_d'].'</td>';
+            echo'<td>'.$resultat11['date_p'].'</td>' ;
+            echo' <td>'.$resultat11['placeEx'].'</td>' ;
+            echo'<td>'.$resultat11['vol'].'</td>';
+            echo'<td>'.$resultat11['type'].'</td>';
+            echo'<td>'.$resultat11['place'].'</td>';
+            echo ' <td>'.$resultat11['id'].'</td>';  
             echo' </tr>';
+               $cn++;
+           }
+           
               ?>
           </tbody>
         </table>
