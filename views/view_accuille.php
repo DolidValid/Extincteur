@@ -184,10 +184,8 @@
           </thead>
           <tbody>
             <?php
-$resultat11 = $extin1->fetch();
-
       $cn=1;
-           while($resultat11 = $extin->fetch()){
+           while($resultat11 = $extine->fetch()){
 
             echo '<tr>' ;       
             echo'  <td>'.$resultat11['date_d'].'</td>';
@@ -206,9 +204,50 @@ $resultat11 = $extin1->fetch();
         </table>
 
         <div class=" py-4  text-center align-items-center justify-content-center">
-          <button class="btn btn-info">
-            hello to hell of jdah 
-          </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Extincteur</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nouveau extincteur</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">مكان التواجد </label>
+            <input type="text" name="place" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">النوع</label>
+            <input type="text" name="type" class="form-control" id="recipient-name">
+          </div>  
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">حجم</label>
+            <input type="text" name="volume" class="form-control" id="recipient-name">
+          </div>  
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
+            <input type="text" name="Exact_location" class="form-control" id="recipient-name">
+          </div>  
+          <div class="input-group date" data-provide="datepicker">
+          <input data-provide="datepicker">
+            <div class="input-group-addon">
+               <span class="glyphicon glyphicon-th"></span>
+          </div>
+</div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
         </div>
 
 

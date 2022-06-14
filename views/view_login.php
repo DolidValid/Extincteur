@@ -179,9 +179,19 @@
         
           </section>
 </main>
+<section>
+  <div class="container py-5">
+
+  </div>
+</section>
+<section>
+  <div class="container py-3">
+
+  </div>
+</section>
 <div class=" bg-white ">
     <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-5 my-4 fixed border-top">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 fixed border-top">
             <div class="col-md-4 d-flex align-items-center">
              
               <span class="mb-3 mb-md-0 text-muted">&copy; 2022 DevDolid, Inc</span>

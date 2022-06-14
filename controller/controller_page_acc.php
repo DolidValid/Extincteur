@@ -5,7 +5,7 @@ include_once('../model/model_extin.php');
 
 
 $extincteur = new extin();
-$extin= $extincteur->afficher($bdd); 
+$extine= $extincteur->afficher($bdd); 
 
 
-include_once('../views/accuille.php');
+include_once('../views/view_accuille.php');
