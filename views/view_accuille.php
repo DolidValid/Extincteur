@@ -217,7 +217,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        
+        <form method="POST" action="../controller/controller_page_acc.php"  >
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">مكان التواجد </label>
             <input type="text" name="place" class="form-control" id="recipient-name">
@@ -236,12 +237,12 @@
           </div>  
       
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
-            <input type="date" name="Exact_location" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-form-label">تاريخ التعبئة </label>
+            <input type="date" name="date_d" class="form-control" id="recipient-name">
           </div>  
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
-            <input type="date" name="Exact_location" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-form-label">تاريخ انتهاء الصلاحية</label>
+            <input type="date" name="date_p" class="form-control" id="recipient-name">
           </div> 
           
       </div>
