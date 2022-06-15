@@ -77,6 +77,8 @@ public function nbrExtinPerime($bdd)
         $count++;
 
     }
+
+    return $count;
 }
 
 

@@ -119,7 +119,9 @@
           <li class="nav-item">
             <a class="nav-link" href="../controller/controller_extinPerime.php">
               <span data-feather="layers" class="align-text-bottom"></span>
-              Extincteur perime
+              Extincteur perime <span class="px-3"> <?php if (isset($nbrPerime)) {
+               echo $nbrPerime;
+              } ?> </span>
             </a>
           </li>
         </ul> 
@@ -232,12 +234,15 @@
             <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
             <input type="text" name="Exact_location" class="form-control" id="recipient-name">
           </div>  
-          <div class="input-group date" data-provide="datepicker">
-          <input data-provide="datepicker">
-            <div class="input-group-addon">
-               <span class="glyphicon glyphicon-th"></span>
-          </div>
-</div>
+      
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
+            <input type="date" name="Exact_location" class="form-control" id="recipient-name">
+          </div>  
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
+            <input type="date" name="Exact_location" class="form-control" id="recipient-name">
+          </div> 
           
       </div>
       <div class="modal-footer">
@@ -261,6 +266,7 @@
 
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"> 
+       </script><script src="../ASSETS/JS/datePiker.js"></script>   
       </script><script src="../ASSETS/JS/dashboard.js"></script>
   </body>
 </html>

@@ -106,7 +106,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="layers" class="align-text-bottom"></span>
-              Integrations
+              Extincteur perime
             </a>
           </li>
         </ul>
@@ -174,13 +174,6 @@
               ?>
           </tbody>
         </table>
-
-        <div class=" py-4  text-center align-items-center justify-content-center">
-          <button class="btn btn-info">
-            hello to hell of jdah 
-          </button>
-        </div>
-
 
       </div>
     </main>
