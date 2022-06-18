@@ -81,12 +81,17 @@ public function nbrExtinPerime($bdd)
 
  public function addExtin($bdd)
 {
-  
+    //$date1= '2022-02-02';
+    $date11=date('y-m-d',strtotime($this->date_d));
+
+   // $date2= '2022-02-02';
+    $date22=date('y-m-d',strtotime($this->date_p));
+
     $ins= $bdd->prepare('INSERT INTO extin(id,date_d,date_p,place,typeE,vol,placeEx) VALUES (:id, :date_d, :date_p, :place, :typeE, :vol, :placeEx)');
 				$ins->execute(array(
                     'id' => '',
-					'date_d' => $this->date_d,
-					'date_p' => $this->date_p,
+					'date_d' =>  $date11,
+					'date_p' => $date22,
 					'place' =>$this->place,
                     'typeE' =>$this->type,
                     'vol' =>$this->vol,

@@ -207,9 +207,11 @@
 
         <div class=" py-4  text-center align-items-center justify-content-center">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Extincteur</button>
+                
 
-
-       <?PHP $bdd->exec('INSERT INTO extin(id,date_d,date_p,place,typeE,vol,palceEx) VALUES(\'\',\'2022-02-02\',\'2022-02-02\',\'ايض\',\'ابتي\',\'ا5\',\'بنسيابني\')'); ?>
+       <?PHP 
+       
+     //  $bdd->exec('INSERT INTO extin(id,date_d,date_p,place,typeE,vol,palceEx)VALUES(10,'$date11','$date22','ايض','ابتي',5,'بنسيابني')'); ?>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -218,7 +220,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Nouveau extincteur</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="POST" action="../controller/controller_page_acc.php"  >
+      <form  action="../controller/controller_page_acc.php" method="POST"  >
       <div class="modal-body">
         
         <form method="POST" action="../controller/controller_page_acc.php"  >
