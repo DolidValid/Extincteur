@@ -3,7 +3,7 @@
 
 class extin{
 
-private $id;
+
 private $place;
 private $type;
 private $vol;
@@ -14,10 +14,10 @@ private $date_p;
 
 
 
-public function constructeur($id,$place,$type,$vol,$placeEx,$date_d, $date_p)
+public function constructeur($place,$type,$vol,$placeEx,$date_d, $date_p)
 {
 
-$this->id = $id;
+
 $this->place = $place;
 $this->type = $type;
 $this->vol = $vol;
@@ -26,9 +26,7 @@ $this->date_d = $date_d;
 $this->date_p = $date_p;
 }
 
-public function getId(){
-    return $this->id;
-}
+
 public function getPlace(){
     return $this->place;
 }
@@ -81,6 +79,21 @@ public function nbrExtinPerime($bdd)
     return $count;
 }
 
+ public function addExtin($bdd)
+{
+  
+    $ins= $bdd->prepare('INSERT INTO extin(id,date_d,date_p,place,typeE,vol,placeEx) VALUES (:id, :date_d, :date_p, :place, :typeE, :vol, :placeEx)');
+				$ins->execute(array(
+                    'id' => '',
+					'date_d' => $this->date_d,
+					'date_p' => $this->date_p,
+					'place' =>$this->place,
+                    'typeE' =>$this->type,
+                    'vol' =>$this->vol,
+                    'placeEx' =>$this->placeEx
+				));
 
+}
+//INSERT INTO `extin` (`id`, `date_d`, `date_p`, `place`, `typeE`, `vol`, `placeEx`) VALUES ('7', '2022-06-01', '2022-06-19', 'HHH', 'HH', 'HH', 'HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH'); 
 
 }

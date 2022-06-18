@@ -11,6 +11,12 @@ $resultat = $req->fetch();
 
 echo($resultat['pseudo']);
 
+
+$req = $bdd->exec('INSERT INTO USER(pseudo,passeword) VALUES(\'dolid\',\'123456\') ');
+
+
+echo($resultat['pseudo']);
+
 echo('khalil');
 
 ?>

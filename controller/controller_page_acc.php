@@ -2,16 +2,19 @@
 include_once('../model/connexion_sql.php');
 include_once('../model/model_extin.php');
 
-$ins= $db->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message) VALUES ( :id_expediteur, :id_destinataire, :message)');
-				$ins->execute(array(
-					'id_expediteur' => 16,
-					'id_destinataire' => $id_destinataire,
-					'message' => $message
-				));
+
 
 
 $extincteur = new extin();
 
+if (isset( $_POST['place']) && isset( $_POST['type']) && isset( $_POST['volume']) &&
+ isset( $_POST['Exact_location']) && isset( $_POST['date_d']) && isset( $_POST['date_p'])  ) {
+    $nvxExtin = new extin($_POST['place'],$_POST['type'],$_POST['volume'],$_POST['Exact_location'],$_POST['date_d'],$_POST['date_p']);
+   
+    $nvxExtin->addExtin($bdd);
+} 
+
+$bdd->exec('INSERT INTO extin(id,date_d,date_p,place,typeE,vol,palceEx) VALUES(,\'\', \'2022-02-02\',\'2022-02-02\',\'ايض\',\'ابتي\',\'ا5\',\'بنسيابني\')');
 $extine= $extincteur->afficher($bdd);
 $nbrPerime = $extincteur-> nbrExtinPerime($bdd); 
 

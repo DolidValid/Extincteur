@@ -160,7 +160,7 @@
             echo'<td>'.$resultat['date_p'].'</td>' ;
             echo' <td>'.$resultat['placeEx'].'</td>' ;
             echo'<td>'.$resultat['vol'].'</td>';
-            echo'<td>'.$resultat['type'].'</td>';
+            echo'<td>'.$resultat['typeE'].'</td>';
             echo'<td>'.$resultat['place'].'</td>';
             echo ' <td>'.$resultat['id'].'</td>';  
             echo' </tr>';

@@ -194,7 +194,7 @@
             echo'<td>'.$resultat11['date_p'].'</td>' ;
             echo' <td>'.$resultat11['placeEx'].'</td>' ;
             echo'<td>'.$resultat11['vol'].'</td>';
-            echo'<td>'.$resultat11['type'].'</td>';
+            echo'<td>'.$resultat11['typeE'].'</td>';
             echo'<td>'.$resultat11['place'].'</td>';
             echo ' <td>'.$resultat11['id'].'</td>';  
             echo' </tr>';
@@ -209,6 +209,8 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Extincteur</button>
 
 
+       <?PHP $bdd->exec('INSERT INTO extin(id,date_d,date_p,place,typeE,vol,palceEx) VALUES(\'\',\'2022-02-02\',\'2022-02-02\',\'ايض\',\'ابتي\',\'ا5\',\'بنسيابني\')'); ?>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -216,6 +218,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Nouveau extincteur</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form method="POST" action="../controller/controller_page_acc.php"  >
       <div class="modal-body">
         
         <form method="POST" action="../controller/controller_page_acc.php"  >
