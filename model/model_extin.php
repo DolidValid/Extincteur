@@ -86,7 +86,13 @@ public function nbrExtinPerime($bdd)
 
     $date22=date('y-m-d',strtotime($this->date_p));
   
-  
+  $ppp=$this->place;
+  $t=$this->type;
+
+  $ver = $this->Vol;
+
+  $por = $this->PlaceEx;
+
                 try {
           
                   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -96,10 +102,10 @@ public function nbrExtinPerime($bdd)
                     
                     'date_d' => $date11,
                     'date_p' => $date22,
-                    'place' =>$this->getPlace(),
-                   'typeE' =>$this->getType(),
-                    'vol' =>$this->getVol(),
-                   'placeEx' =>$this->getPlaceEx()              
+                    'place' =>$ppp,
+                   'typeE' =>$t,
+                    'vol' =>$ver,
+                   'placeEx' =>$por              
                  ));
                   
                 
