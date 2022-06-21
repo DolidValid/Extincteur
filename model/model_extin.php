@@ -82,7 +82,39 @@ public function nbrExtinPerime($bdd)
  public function addExtin($bdd)
 {
    
+    $date11=date('y-m-d',strtotime($this->date_d));
+
+    $date22=date('y-m-d',strtotime($this->date_p));
+  
+  
+                try {
+          
+                  $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+    $ins= $bdd->prepare('INSERT INTO extin(date_d,date_p,place,typeE,vol,placeEx) VALUES( :date_d, :date_p, :place, :typeE, :vol, :placeEx)');
+                $ins->execute(array(
+                    
+                    'date_d' => $date11,
+                    'date_p' => $date22,
+                    'place' =>$this->getPlace(),
+                   'typeE' =>$this->getType(),
+                    'vol' =>$this->getVol(),
+                   'placeEx' =>$this->getPlaceEx()              
+                 ));
+                  
+                
+  
+  
+                
+                } catch(PDOException $e) {
+                  echo  $e->getMessage();
+                }
+  
+                $conn = null;
+  
+  $_POST['place']=0;
+
 }
-//INSERT INTO `extin` (`id`, `date_d`, `date_p`, `place`, `typeE`, `vol`, `placeEx`) VALUES ('7', '2022-06-01', '2022-06-19', 'HHH', 'HH', 'HH', 'HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH'); 
+
 
 }
