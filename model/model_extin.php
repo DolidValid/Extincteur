@@ -79,20 +79,12 @@ public function nbrExtinPerime($bdd)
     return $count;
 }
 
- public function addExtin($bdd)
-{
-   
-    $date11=date('y-m-d',strtotime($this->date_d));
+ public function addExtin($bdd,$a,$b,$c,$d,$ee,$f)
+{ 
+    $date11=date('y-m-d',strtotime($a));
 
-    $date22=date('y-m-d',strtotime($this->date_p));
+    $date22=date('y-m-d',strtotime($b));
   
-  $ppp=$this->place;
-  $t=$this->type;
-
-  $ver = $this->Vol;
-
-  $por = $this->PlaceEx;
-
                 try {
           
                   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -102,25 +94,37 @@ public function nbrExtinPerime($bdd)
                     
                     'date_d' => $date11,
                     'date_p' => $date22,
-                    'place' =>$ppp,
-                   'typeE' =>$t,
-                    'vol' =>$ver,
-                   'placeEx' =>$por              
+                    'place' =>$c,
+                   'typeE' =>$d,
+                    'vol' =>$ee,
+                   'placeEx' =>$f              
                  ));
                   
-                
-  
-  
-                
                 } catch(PDOException $e) {
                   echo  $e->getMessage();
                 }
-  
-                $conn = null;
-  
+                
   $_POST['place']=0;
 
 }
 
+public function supp($bdd,$a){
+
+    try {
+          
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$ins= $bdd->prepare('DELETE FROM extin WHERE id= $a');
+      $ins->execute(array(
+          
+          'date_d' => $a
+                       
+       ));
+        
+      } catch(PDOException $e) {
+        echo  $e->getMessage();
+      }
+
+}
 
 }

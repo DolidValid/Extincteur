@@ -14,7 +14,7 @@ if (isset( $_POST['place'])  && isset( $_POST['type']) && isset( $_POST['volume'
     
     $nvxExtin = new extin($_POST['place'],$_POST['type'],$_POST['volume'],$_POST['Exact_location'],$_POST['date_d'],$_POST['date_p']);
    
-   $nvxExtin->addExtin($bdd);
+   $nvxExtin->addExtin($bdd,$_POST['date_d'],$_POST['date_p'],$_POST['place'],$_POST['type'],$_POST['volume'],$_POST['Exact_location']);
 } 
 
 //$bdd->exec('INSERT INTO extin(id,date_d,date_p,place,typeE,vol,palceEx) VALUES(,\'\', \'2022-02-02\',\'2022-02-02\',\'ايض\',\'ابتي\',\'hfdj\',\'بنسيابني\')');

@@ -151,67 +151,18 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
+          <!--  <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar" class="align-text-bottom"></span>
-            This week
-          </button>
-        </div>
-      </div>
+         
+          HELLO NVX btn -->
 
-     
-
-      <h2 class="py-3">Table des extincteurs </h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-            <th scope="col">date de priemption </th>
-            <th scope="col">date de debut</th>
-            <th scope="col">place exactement</th>
-            <th scope="col">volume</th>
-            <th scope="col">type  </th>
-            <th scope="col">place</th>
-              <th scope="col ">id</th>
-              
-              
-              
-             
-              
-            
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-      $cn=1;
-           while($resultat11 = $extine->fetch()){
-
-            echo '<tr>' ;       
-            echo'  <td>'.$resultat11['date_d'].'</td>';
-            echo'<td>'.$resultat11['date_p'].'</td>' ;
-            echo' <td>'.$resultat11['placeEx'].'</td>' ;
-            echo'<td>'.$resultat11['vol'].'</td>';
-            echo'<td>'.$resultat11['typeE'].'</td>';
-            echo'<td>'.$resultat11['place'].'</td>';
-            echo ' <td>'.$resultat11['id'].'</td>';  
-            echo' </tr>';
-               $cn++;
-           }
-           
-              ?>
-          </tbody>
-        </table>
-
-        <div class=" py-4  text-center align-items-center justify-content-center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Extincteur</button>
+           <div class="   text-center align-items-center justify-content-center">
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Extincteur</button>
                 
 
-       <?PHP 
-       
-     //  $bdd->exec('INSERT INTO extin(id,date_d,date_p,place,typeE,vol,palceEx)VALUES(10,'$date11','$date22','ايض','ابتي',5,'بنسيابني')'); ?>
+      
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -223,7 +174,7 @@
       <form  action="../controller/controller_page_acc.php" method="POST"  >
       <div class="modal-body">
         
-        <form method="POST" action="../controller/controller_page_acc.php"  >
+       
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">مكان التواجد </label>
             <input type="text" name="place" class="form-control" id="recipient-name">
@@ -260,6 +211,91 @@
   </div>
 </div>
         </div>
+
+
+
+
+
+         
+        </div>
+      </div>
+
+     
+
+      <h2 class="py-3">Table des extincteurs </h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+            <th scope="col">Action</th>
+            <th scope="col">date de priemption </th>
+            <th scope="col">date de debut</th>
+            <th scope="col">place exactement</th>
+            <th scope="col">volume</th>
+            <th scope="col">type  </th>
+            <th scope="col">place</th>
+              <th scope="col ">id</th>
+              
+              
+              
+             
+              
+            
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+      $cn=1;
+           while($resultat11 = $extine->fetch()){
+
+            
+
+            echo '<tr>' ;      
+            echo'<td>    
+            <form  action="../controller/controller_page_acc.php?id='.$resultat11['id'].'" method="POST"  >
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Supprimer
+            </button>
+            
+            <!-- Modal -->
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Supprission extincteur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Vous voulez vraiment  supprimer cette . .
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+                    <button type="submit" class="btn btn-primary">Oui</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+             </form>
+
+          </td>' ; 
+            echo'<td>'.$resultat11['date_p'].'</td>' ;
+            echo'  <td>'.$resultat11['date_d'].'</td>';
+            echo' <td>'.$resultat11['placeEx'].'</td>' ;
+            echo'<td>'.$resultat11['vol'].'</td>';
+            echo'<td>'.$resultat11['typeE'].'</td>';
+            echo'<td>'.$resultat11['place'].'</td>';
+            echo ' <td>'.$resultat11['id'].'</td>';  
+            echo' </tr>';
+               $cn++;
+           }
+           
+              ?>
+          </tbody>
+        </table>
+
+       
 
 
       </div>
