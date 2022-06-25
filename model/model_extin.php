@@ -49,7 +49,7 @@ public function getDate_p(){
 
 public function afficher($bdd){
 
-    $req = $bdd->prepare('SELECT*FROM extin');
+    $req = $bdd->prepare('SELECT*FROM extin /*ORDER BY place*/ ');
     $req->execute();
     
     
@@ -58,7 +58,7 @@ return $req;
 }
 
 public function ExtinPerime ($bdd){
-    $req = $bdd->prepare('SELECT*FROM extin where date_p <= now() ');
+    $req = $bdd->prepare('SELECT*FROM extin where date_p <= now()  ');
     $req->execute();
     
     return $req;
@@ -110,19 +110,22 @@ public function nbrExtinPerime($bdd)
 
 public function supp($bdd,$a){
 
+$num= (int) $a ;
+
     try {
           
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$ins= $bdd->prepare('DELETE FROM extin WHERE id= $a');
+
+$ins= $bdd->prepare('DELETE FROM extin WHERE id= :a');
       $ins->execute(array(
           
-          'date_d' => $a
+          'a' => $num
                        
        ));
         
       } catch(PDOException $e) {
-        echo  $e->getMessage();
+        echo 'jgdflgjfdlkgjfdklgjdflgjfdklgjfdlgjfdlggfdljkkkkkkkkk'. $e->getMessage();
       }
 
 }

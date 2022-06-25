@@ -224,7 +224,7 @@
 
       <h2 class="py-3">Table des extincteurs </h2>
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+      <table class="table table-striped table-sm">
           <thead>
             <tr>
             <th scope="col">Action</th>
@@ -232,9 +232,9 @@
             <th scope="col">date de debut</th>
             <th scope="col">place exactement</th>
             <th scope="col">volume</th>
-            <th scope="col">type  </th>
+            <th scope="col">type </th>
             <th scope="col">place</th>
-              <th scope="col ">id</th>
+            <th scope="col ">id</th>
               
               
               
@@ -244,39 +244,82 @@
             </tr>
           </thead>
           <tbody>
-            <?php
-      $cn=1;
-           while($resultat11 = $extine->fetch()){
 
+      <?php 
+      $varBool=false;
+      $temp=1;
+while($resultat11 = $extine->fetch()){
+
+
+ 
+if($temp==1){
+  $pplace=$resultat11['place'];
+}
+
+  if( $pplace!=$resultat11['place'] ){
+$temp=0;
+  ?>
+ <div class="container py-3">
+
+ </div>
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+            <th scope="col">Action</th>
+            <th scope="col">date de priemption </th>
+            <th scope="col">date de debut</th>
+            <th scope="col">place exactement</th>
+            <th scope="col">volume</th>
+            <th scope="col">type </th>
+            <th scope="col">place</th>
+            <th scope="col ">id</th>
+              
+              
+              
+             
+              
+            
+            </tr>
+          </thead>
+          <tbody>
             
 
-            echo '<tr>' ;      
+   
+           <?php
+
+
+          
+
+            }
+           
+            $iid=$resultat11['id'];           
+            echo '<form  action="../controller/controller_page_acc.php?id='. $iid.'" method="POST"  > <tr> ' ;      
             echo'<td>    
-            <form  action="../controller/controller_page_acc.php?id='.$resultat11['id'].'" method="POST"  >
+            
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="submit" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Supprimer
             </button>
             
-            <!-- Modal -->
-
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Supprission extincteur</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Vous voulez vraiment  supprimer cette . .
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
-                    <button type="submit" class="btn btn-primary">Oui</button>
-                  </div>
-                </div>
+          <!--  Modal  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="dynamique" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Supprission extincteur</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Vous voulez vraiment  supprimer cette '.$iid .' ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+                <button type="submit" class="btn btn-primary">Oui</button>
               </div>
             </div>
+          </div>
+        </div>  -->
+
+           
              </form>
 
           </td>' ; 
@@ -287,10 +330,11 @@
             echo'<td>'.$resultat11['typeE'].'</td>';
             echo'<td>'.$resultat11['place'].'</td>';
             echo ' <td>'.$resultat11['id'].'</td>';  
-            echo' </tr>';
-               $cn++;
+            echo' </tr></form>';
+              
+               
            }
-           
+        $temp++;   
               ?>
           </tbody>
         </table>

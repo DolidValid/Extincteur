@@ -133,12 +133,7 @@
             <th scope="col">type  </th>
             <th scope="col">place</th>
             <th scope="col ">id</th>
-              
-              
-              
-             
-              
-            
+
             </tr>
           </thead>
           <tbody>
@@ -147,7 +142,7 @@
            while($resultat = $donne->fetch()){
 
             echo '<tr>' ; 
-            echo'<td>'.$resultat['date_p'].'</td>' ;
+            echo'<td class="text-danger">'.$resultat['date_p'].'</td>' ;
             echo'  <td>'.$resultat['date_d'].'</td>';
             echo' <td>'.$resultat['placeEx'].'</td>' ;
             echo'<td>'.$resultat['vol'].'</td>';
