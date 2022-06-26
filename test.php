@@ -5,18 +5,35 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
-$req = $bdd->prepare('SELECT pseudo , passeword FROM user ');
-$req->execute();
-$resultat = $req->fetch();
+//$req = $bdd->prepare('SELECT pseudo , passeword FROM user ');
+//$req->execute();
+//$resultat = $req->fetch();
 
-echo($resultat['pseudo']);
-
-
-$req = $bdd->exec('INSERT INTO USER(pseudo,passeword) VALUES(\'dolid\',\'123456\') ');
+//echo($resultat['pseudo']);
 
 
-echo($resultat['pseudo']);
+
+
+$reqq = $bdd->prepare('SELECT*FROM extin WHERE date_p  <= DATE_ADD(now(),INTERVAL 10 DAY )');
+$reqq->execute();
+
+
+
+
+while($resultatee = $reqq->fetch())
+{
+
+   // echo($resultatee['id']);
+  $xk = date('Y\-m\-d')-$resultatee['date_p'];
+
+    echo('-------------------------'.$xk);
+
+}
+  
 
 echo('khalil');
+
+
+
 
 ?>

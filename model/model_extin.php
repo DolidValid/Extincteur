@@ -49,7 +49,7 @@ public function getDate_p(){
 
 public function afficher($bdd){
 
-    $req = $bdd->prepare('SELECT*FROM extin /*ORDER BY place*/ ');
+    $req = $bdd->prepare('SELECT*FROM extin ORDER BY place ');
     $req->execute();
     
     

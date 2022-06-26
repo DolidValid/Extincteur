@@ -292,8 +292,8 @@ $temp=0;
 
             }
            
-            $iid=$resultat11['id'];           
-            echo '<form  action="../controller/controller_page_acc.php?id='. $iid.'" method="POST"  > <tr> ' ;      
+                 
+            echo '<form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  > <tr> ' ;      
             echo'<td>    
             
             <!-- Button trigger modal -->
@@ -309,7 +309,7 @@ $temp=0;
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                Vous voulez vraiment  supprimer cette '.$iid .' ...
+                Vous voulez vraiment  supprimer cette  ...
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
@@ -332,9 +332,9 @@ $temp=0;
             echo ' <td>'.$resultat11['id'].'</td>';  
             echo' </tr></form>';
               
-               
+            $temp++;  
            }
-        $temp++;   
+        
               ?>
           </tbody>
         </table>
