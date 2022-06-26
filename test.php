@@ -24,7 +24,11 @@ while($resultatee = $reqq->fetch())
 {
 
    // echo($resultatee['id']);
-  $xk = date('Y\-m\-d')-$resultatee['date_p'];
+ 
+           $hh=  strtotime($resultatee['date_p']);
+           $hhh=strtotime(date('Y\-m\-d H:i:s'));
+         
+           $xk =($hh - $hhh)/(86400);
 
     echo('-------------------------'.$xk);
 
