@@ -142,6 +142,20 @@
            while($resultat = $donne->fetch()){
 
             echo '<tr>' ; 
+            
+            echo '<form  action="../controller/controller_extinPerime.php?id='. $resultat['id'].'" method="POST"  > <tr> ' ;      
+            echo'<td >    
+            
+            <!-- Button trigger modal -->
+            <button type="submit" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Supprimer
+            </button>
+            
+        
+             </form>
+
+          </td>' ; 
+
             echo'<td class="text-danger">'.$resultat['date_p'].'</td>' ;
             echo'  <td>'.$resultat['date_d'].'</td>';
             echo' <td>'.$resultat['placeEx'].'</td>' ;

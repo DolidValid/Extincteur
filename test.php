@@ -14,7 +14,8 @@ try {
 
 
 
-$reqq = $bdd->prepare('SELECT*FROM extin WHERE date_p  <= DATE_ADD(now(),INTERVAL 10 DAY )');
+//$reqq = $bdd->prepare('SELECT*FROM extin WHERE date_p  <= DATE_ADD(now(),INTERVAL 10 DAY )');
+$reqq = $bdd->prepare('SELECT*FROM extin ');
 $reqq->execute();
 
 
@@ -30,7 +31,8 @@ while($resultatee = $reqq->fetch())
          
            $xk =($hh - $hhh)/(86400);
 
-    echo('-------------------------'.$xk);
+    echo('-------------------------'.round($xk).'<br>');
+    echo(round(0.60) . "<br>");
 
 }
   

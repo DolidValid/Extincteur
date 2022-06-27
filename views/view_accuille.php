@@ -177,28 +177,28 @@
        
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">مكان التواجد </label>
-            <input type="text" name="place" class="form-control" id="recipient-name">
+            <input type="text" required name="place" class="form-control" id="recipient-name">
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">النوع</label>
-            <input type="text" name="type" class="form-control" id="recipient-name">
+            <input type="text" required name="type" class="form-control" id="recipient-name">
           </div>  
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">حجم</label>
-            <input type="text" name="volume" class="form-control" id="recipient-name">
+            <input type="text" required name="volume" class="form-control" id="recipient-name">
           </div>  
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
-            <input type="text" name="Exact_location" class="form-control" id="recipient-name">
+            <input type="text" required name="Exact_location" class="form-control" id="recipient-name">
           </div>  
       
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">تاريخ التعبئة </label>
-            <input type="date" name="date_d" class="form-control" id="recipient-name">
+            <input type="date" required name="date_d" class="form-control" id="recipient-name">
           </div>  
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">تاريخ انتهاء الصلاحية</label>
-            <input type="date" name="date_p" class="form-control" id="recipient-name">
+            <input type="date" required name="date_p" class="form-control" id="recipient-name">
           </div> 
           
       </div>
@@ -228,6 +228,7 @@
           <thead>
             <tr>
             <th scope="col">Action</th>
+            <th scope="col">Jour rester</th>
             <th scope="col">date de priemption </th>
             <th scope="col">date de debut</th>
             <th scope="col">place exactement</th>
@@ -246,8 +247,9 @@
           <tbody>
 
       <?php 
-      $varBool=false;
+  
       $temp=1;
+
 while($resultat11 = $extine->fetch()){
 
 
@@ -266,6 +268,7 @@ $temp=0;
           <thead>
             <tr>
             <th scope="col">Action</th>
+            <th scope="col">Jour rester</th>
             <th scope="col">date de priemption </th>
             <th scope="col">date de debut</th>
             <th scope="col">place exactement</th>
@@ -292,37 +295,30 @@ $temp=0;
 
             }
            
+
+            $jour=$extincteur->resJour($resultat11['date_p']);
+
+
+            if($jour>10){
                  
             echo '<form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  > <tr> ' ;      
-            echo'<td>    
+            echo'<td >    
             
             <!-- Button trigger modal -->
             <button type="submit" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Supprimer
             </button>
             
-          <!--  Modal  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="dynamique" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Supprission extincteur</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                Vous voulez vraiment  supprimer cette  ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
-                <button type="submit" class="btn btn-primary">Oui</button>
-              </div>
-            </div>
-          </div>
-        </div>  -->
-
-           
+        
              </form>
 
           </td>' ; 
+
+         
+          
+           
+           
+            echo'<td>'.$jour.'</td>' ;          
             echo'<td>'.$resultat11['date_p'].'</td>' ;
             echo'  <td>'.$resultat11['date_d'].'</td>';
             echo' <td>'.$resultat11['placeEx'].'</td>' ;
@@ -331,7 +327,37 @@ $temp=0;
             echo'<td>'.$resultat11['place'].'</td>';
             echo ' <td>'.$resultat11['id'].'</td>';  
             echo' </tr></form>';
+            }else{
+    
+              echo '<form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  > <tr> ' ;      
+              echo'<td class="bg-danger ">    
               
+              <!-- Button trigger modal -->
+              <button type="submit" class="btn btn-sm btn-outline-secondary text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Supprimer
+              </button>
+              
+          
+               </form>
+  
+            </td>' ; 
+  
+           
+            
+             
+             
+              echo'<td class="bg-danger">'.$jour.'</td>' ;          
+              echo'<td class="bg-danger">'.$resultat11['date_p'].'</td>' ;
+              echo'  <td class="bg-danger">'.$resultat11['date_d'].'</td>';
+              echo' <td class="bg-danger">'.$resultat11['placeEx'].'</td>' ;
+              echo'<td class="bg-danger">'.$resultat11['vol'].'</td>';
+              echo'<td class="bg-danger">'.$resultat11['typeE'].'</td>';
+              echo'<td class="bg-danger">'.$resultat11['place'].'</td>';
+              echo ' <td class="bg-danger">'.$resultat11['id'].'</td>';  
+              echo' </tr></form>';
+
+
+            }
             $temp++;  
            }
         

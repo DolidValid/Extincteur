@@ -49,7 +49,7 @@ public function getDate_p(){
 
 public function afficher($bdd){
 
-    $req = $bdd->prepare('SELECT*FROM extin ORDER BY place ');
+    $req = $bdd->prepare('SELECT*FROM extin WHERE date_p > NOW() ORDER BY place ');
     $req->execute();
     
     
@@ -127,6 +127,16 @@ $ins= $bdd->prepare('DELETE FROM extin WHERE id= :a');
       } catch(PDOException $e) {
         echo 'jgdflgjfdlkgjfdklgjdflgjfdklgjfdlgjfdlggfdljkkkkkkkkk'. $e->getMessage();
       }
+
+}
+public function resJour($datep){
+
+    $hh=  strtotime($datep);
+    $hhh=strtotime(date('Y\-m\-d H:i:s'));
+  
+    $xk =($hh - $hhh)/(86400);
+
+    return  round($xk);
 
 }
 
