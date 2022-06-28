@@ -11,6 +11,7 @@
     <title>Dashboard</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+     <link rel="stylesheet" href="../ASSETS/CSS/bootstrap-icons.css">   
 
     
 
@@ -171,10 +172,10 @@
         <h5 class="modal-title" id="exampleModalLabel">Nouveau extincteur</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form  action="../controller/controller_page_acc.php" method="POST"  >
+      <form  action="../controller/controller_add.php" method="POST"  >
       <div class="modal-body">
         
-       
+
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">مكان التواجد </label>
             <input type="text" required name="place" class="form-control" id="recipient-name">
@@ -299,11 +300,12 @@ $temp=0;
             $jour=$extincteur->resJour($resultat11['date_p']);
 
 
-            if($jour>10){
+              if($jour>10){
                  
-            echo '<form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  > <tr> ' ;      
+            echo ' <tr> ' ;      
             echo'<td >    
-            
+
+            <form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  >
             <!-- Button trigger modal -->
             <button type="submit" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Supprimer
@@ -311,6 +313,12 @@ $temp=0;
             
         
              </form>
+
+
+
+
+
+            
 
           </td>' ; 
 
@@ -326,12 +334,12 @@ $temp=0;
             echo'<td>'.$resultat11['typeE'].'</td>';
             echo'<td>'.$resultat11['place'].'</td>';
             echo ' <td>'.$resultat11['id'].'</td>';  
-            echo' </tr></form>';
+            echo' </tr>';
             }else{
     
-              echo '<form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  > <tr> ' ;      
+              echo ' <tr> ' ;      
               echo'<td class="bg-danger ">    
-              
+              <form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  >
               <!-- Button trigger modal -->
               <button type="submit" class="btn btn-sm btn-outline-secondary text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Supprimer
@@ -354,7 +362,7 @@ $temp=0;
               echo'<td class="bg-danger">'.$resultat11['typeE'].'</td>';
               echo'<td class="bg-danger">'.$resultat11['place'].'</td>';
               echo ' <td class="bg-danger">'.$resultat11['id'].'</td>';  
-              echo' </tr></form>';
+              echo' </tr>';
 
 
             }
