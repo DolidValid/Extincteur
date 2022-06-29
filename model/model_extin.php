@@ -143,7 +143,6 @@ public function resJour($datep){
 public function UpDate($bdd,$idd,$a,$b,$c,$d,$ee,$f)
 { 
     $date11=date('y-m-d',strtotime($a));
-
     $date22=date('y-m-d',strtotime($b));
   
                 try {
