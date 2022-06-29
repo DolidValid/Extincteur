@@ -140,4 +140,31 @@ public function resJour($datep){
 
 }
 
+public function UpDate($bdd,$idd,$a,$b,$c,$d,$ee,$f)
+{ 
+    $date11=date('y-m-d',strtotime($a));
+
+    $date22=date('y-m-d',strtotime($b));
+  
+                try {
+          
+                  $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+                // "UPDATE `user` SET `firstname` = '$firstname', `lastname` = '$lastname', `address` = '$address' WHERE `user_id` = '$user_id'"
+
+
+    $ins= $bdd->prepare(" UPDATE 'extin' SET 'date_d'= '$date11','date_p'= '$date22' ,'place'= '$c','typeE'= '$d','vol'= '$ee','placeEx'= '$f  ' WHERE 'id'= '$idd' ");
+                $ins->execute();
+                  
+                } catch(PDOException $e) {
+                  echo  $e->getMessage();
+                }
+                
+  $_POST['place']=0;
+
+}
+
+
+
+
 }

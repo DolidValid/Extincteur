@@ -95,7 +95,7 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../controller/controller_page_acc.php">
+            <a class="nav-link " aria-current="page" href="../controller/controller_page_acc.php">
               <span data-feather="home" class="align-text-bottom"></span>
               Dashboard
             </a>
@@ -109,24 +109,23 @@
           </li>
         </ul>
 
-        
       </div>
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">Table des extincteurs  <span class="text-danger">Perime</span></h1>
         
       </div>
 
      
 
-      <h2 class="py-3">Table des extincteurs </h2>
+      <h2 class="py-3"> </h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-            <th scope="col">Action</th>
+            <th scope="col"></th>
             <th scope="col">Action</th>
             <th scope="col">date de priemption </th>
             <th scope="col">date de debut</th>
@@ -160,7 +159,7 @@
 
           
             
-            echo ' <td > <div class="   text-center ">
+            echo ' <td > <div >
             <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal'.$resultat['id'].'" data-bs-whatever="@mdo">Update</button>
                     
     
@@ -173,12 +172,13 @@
             <h5 class="modal-title" id="exampleModalLabel">Nouveau extincteur</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form  action="../controller/controller_add.php" method="POST"  >
+          <form  action="../controller/controller_UpDate.php" method="POST"  >
           <div class="modal-body">
             
     
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">مكان التواجد </label>
+                <input type="hidden" name="user_id" value="'.$resultat['id'].'"/>
                 <input type="text" required value="'.$resultat['place'].'" name="place" class="form-control" id="recipient-name">
               </div>
               <div class="mb-3">
