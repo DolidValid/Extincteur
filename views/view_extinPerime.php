@@ -172,13 +172,13 @@
             <h5 class="modal-title" id="exampleModalLabel">Nouveau extincteur</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form  action="../controller/controller_UpDate.php" method="POST"  >
+          <form  action="../controller/controller_extinPerime.php" method="POST"  >
           <div class="modal-body">
             
     
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">مكان التواجد </label>
-                <input type="hidden" name="user_id" value="'.$resultat['id'].'"/>
+                <input type="hidden" name="id" value="'.$resultat['id'].'"/>
                 <input type="text" required value="'.$resultat['place'].'" name="place" class="form-control" id="recipient-name">
               </div>
               <div class="mb-3">
@@ -206,7 +206,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <button type="submit" class="btn btn-primary">Modifier</button>
           </div>
           </form>
         </div>

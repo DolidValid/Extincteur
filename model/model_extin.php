@@ -152,11 +152,11 @@ public function UpDate($bdd,$idd,$a,$b,$c,$d,$ee,$f)
                 // "UPDATE `user` SET `firstname` = '$firstname', `lastname` = '$lastname', `address` = '$address' WHERE `user_id` = '$user_id'"
 
 
-    $ins= $bdd->prepare(" UPDATE 'extin' SET 'date_d'= '$date11','date_p'= '$date22' ,'place'= '$c','typeE'= '$d','vol'= '$ee','placeEx'= '$f  ' WHERE 'id'= '$idd' ");
+    $ins= $bdd->prepare(" UPDATE extin SET date_d= '$date11',date_p= '$date22' ,place= '$c',typeE= '$d',vol= '$ee',placeEx= '$f' WHERE id= $idd ");
                 $ins->execute();
                   
                 } catch(PDOException $e) {
-                  echo  $e->getMessage();
+                  echo  'jgdflgjfdlkgjfdklgjdflgjfdklgjfdlgjfdlggfdlhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhjkkkkkkkkk  '.$e->getMessage().'///'. $a.'////'.$b;
                 }
                 
   $_POST['place']=0;
