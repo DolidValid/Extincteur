@@ -13,5 +13,5 @@ if (isset( $_POST['place'])   && isset( $_POST['type']) && isset( $_POST['volume
   
 } 
 
-header("Location: http://localhost/extincteur/controller/controller_add_acc.php");
+header("Location: http://localhost/extincteur/controller/controller_page_acc.php");
 die();

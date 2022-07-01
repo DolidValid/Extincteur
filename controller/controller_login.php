@@ -16,12 +16,9 @@ if(isset($_POST['Username'])){
     
            //les sessions nous permette d'accéder (fetch ) de page en 
            if($a){
-              
-         
-
-
-            $_SESSION['Username']= $_POST['Username'];
-
+            session_start();
+            
+            $_SESSION['logged_in'] = true;
                       
             header("Location: http://localhost/extincteur/controller/controller_page_acc.php");
             die();
