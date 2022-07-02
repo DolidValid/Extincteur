@@ -117,9 +117,10 @@
             
                <div class="col-md py-4">
                    <h2>learn nothing is better</h2>
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque magni cum optio
-                      consequatur praesentium facere voluptatibus atque eius exercitationem,
-                       et unde nobis error? Aperiam, excepturi a adipisci molestias sunt distinctio?</p>
+                   <p>this application is developed for the management of the fire extinguisher of the imen clinic.
+             the main functionality is to calculate the days remaining before the experation of a fire extinguisher.
+             indicate the extinguishers that have less than a 10 day lifespan
+             and of course add, delete and modify the extinguisher data</p>
                    
                </div>
            </div>
