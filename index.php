@@ -1,5 +1,3 @@
 <?php
 session_start();
-
-require("includes/functions.php");
-require("views/inscription.view.php");
+header("Location: http://localhost/extincteur/controller/controller_login.php");
