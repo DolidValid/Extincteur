@@ -5,5 +5,8 @@ this application is developed for the management of the fire extinguisher of the
        indicate the extinguishers that have less than a 10 day lifespan
        and of course add, delete and modify the extinguisher data
        
-# what i learn 
+# what i learn
+. use PHP SQL AND BOOTSTRAP
+. use MVC model 
+. application of object-oriented concepts
        
