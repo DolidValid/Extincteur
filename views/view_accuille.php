@@ -169,9 +169,10 @@
       <table class="table table-striped table-sm">
           <thead>
             <tr>
+            <th scope="col"></th>
             <th scope="col">Action</th>
             <th scope="col">Jour rester</th>
-            <th scope="col">date de priemption </th>
+            <th scope="col">date de péremption </th>
             <th scope="col">date de debut</th>
             <th scope="col">place exactement</th>
             <th scope="col">volume</th>
@@ -209,9 +210,10 @@ $temp=0;
         <table class="table table-striped table-sm">
           <thead>
             <tr>
+            <th scope="col"></th>
             <th scope="col">Action</th>
             <th scope="col">Jour rester</th>
-            <th scope="col">date de priemption </th>
+            <th scope="col">date de péremption </th>
             <th scope="col">date de debut</th>
             <th scope="col">place exactement</th>
             <th scope="col">volume</th>
@@ -243,7 +245,64 @@ $temp=0;
 
               if($jour>10){
                  
-            echo ' <tr> ' ;      
+            echo ' <tr> ' ;  
+            
+            
+            echo ' <td > <div >
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal'.$resultat11['id'].'" data-bs-whatever="@mdo">Update</button>
+                    
+    
+          
+    
+    <div class="modal fade" id="exampleModal'.$resultat11['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nouveau extincteur</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form  action="../controller/controller_extinPerime.php" method="POST"  >
+          <div class="modal-body">
+            
+    
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">مكان التواجد </label>
+                <input type="hidden" name="id" value="'.$resultat11['id'].'"/>
+                <input type="text" required value="'.$resultat11['place'].'" name="place" class="form-control" id="recipient-name">
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">النوع</label>
+                <input type="text" value="'.$resultat11['typeE'].'" required name="type" class="form-control" id="recipient-name">
+              </div>  
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">حجم</label>
+                <input type="text" value="'.$resultat11['vol'].'" required name="volume" class="form-control" id="recipient-name">
+              </div>  
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
+                <input type="text" value="'.$resultat11['placeEx'].'" required name="Exact_location" class="form-control" id="recipient-name">
+              </div>  
+          
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">تاريخ التعبئة </label>
+                <input type="date" required value="'.$resultat11['date_d'].'" name="date_d" class="form-control" id="recipient-name">
+              </div>  
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">تاريخ انتهاء الصلاحية</label>
+                <input type="date" required value="'.$resultat11['date_p'].'" name="date_p" class="form-control" id="recipient-name">
+              </div> 
+              
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            <button type="submit" class="btn btn-primary">Modifier</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div> </td>' ; 
+
+
             echo'<td >    
 
             <form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  >
@@ -278,7 +337,65 @@ $temp=0;
             echo' </tr>';
             }else{
     
-              echo ' <tr> ' ;      
+              
+            
+
+
+              echo ' <tr> ' ;                                 
+              echo ' <td class="bg-danger text-light"> <div >                       
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal'.$resultat11['id'].'" data-bs-whatever="@mdo">Update</button>
+                      
+      
+            
+      
+      <div class="modal fade" id="exampleModal'.$resultat11['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Nouveau extincteur</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form  action="../controller/controller_extinPerime.php" method="POST"  >
+            <div class="modal-body">
+              
+      
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">مكان التواجد </label>
+                  <input type="hidden" name="id" value="'.$resultat11['id'].'"/>
+                  <input type="text" required value="'.$resultat11['place'].'" name="place" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">النوع</label>
+                  <input type="text" value="'.$resultat11['typeE'].'" required name="type" class="form-control" id="recipient-name">
+                </div>  
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">حجم</label>
+                  <input type="text" value="'.$resultat11['vol'].'" required name="volume" class="form-control" id="recipient-name">
+                </div>  
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">المكان بالضبط</label>
+                  <input type="text" value="'.$resultat11['placeEx'].'" required name="Exact_location" class="form-control" id="recipient-name">
+                </div>  
+            
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">تاريخ التعبئة </label>
+                  <input type="date" required value="'.$resultat11['date_d'].'" name="date_d" class="form-control" id="recipient-name">
+                </div>  
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">تاريخ انتهاء الصلاحية</label>
+                  <input type="date" required value="'.$resultat11['date_p'].'" name="date_p" class="form-control" id="recipient-name">
+                </div> 
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="submit" class="btn btn-primary">Modifier</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div> </td>' ;
+              
               echo'<td class="bg-danger ">    
               <form  action="../controller/controller_page_acc.php?id='. $resultat11['id'].'" method="POST"  >
               <!-- Button trigger modal -->
